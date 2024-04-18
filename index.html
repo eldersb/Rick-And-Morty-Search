@@ -17,6 +17,23 @@
     body {
         background-color: rgb(29, 29, 29);
     }
+    .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px; 
+  }
+  .alive-dot {
+    background-color: green;
+  }
+
+  .dead-dot {
+    background-color: red; 
+  }
+  .unknown-dot{
+    background-color: rgb(217, 255, 0);
+  }
 </style>
 
 <body>
@@ -51,6 +68,8 @@
                     <div class="card-body">
                       <h5 x-text=" personagemSelect ? personagemSelect.name : 'Nome do personagem'" class="card-title text-light"></h5>
                       <p class="card-text text-light">
+                        <span class="status-dot" x-bind:class="{ 'alive-dot': personagemSelect.status === 'Alive', 'dead-dot': personagemSelect.status === 'Dead', 
+                          'unknown-dot': personagemSelect.status === 'unknown' }"></span>
                         <span  x-text="personagemSelect ? personagemSelect.status : 'Vivo ou morto'"></span>
                         <span>-</span>
                         <span  x-text="personagemSelect ? personagemSelect.species : 'Raça'"></span>

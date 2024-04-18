@@ -1,6 +1,3 @@
-
-
-
 const app = () => {
     return {
         characters: [],
@@ -31,6 +28,8 @@ const app = () => {
     
 
 }
+
+
 
 
 
