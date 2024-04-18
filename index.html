@@ -27,16 +27,16 @@
             <h1 class="fs-1 text-center text-light">Rick And Morty Morty-Search</h1>
           
              <div x-data="app()" class="btn-group d-flex justify-content-md-center align-items-center">
-              <button @click="Isopen"  type="button" class="fs-5 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center text-bg-light p-3 mt-3" aria-expanded="false" style="max-width: 753px; height: 50px;">
-                Sobre quem você quer saber?
-
-                
+              <button x-text="personagemSelect !== null ? personagemSelect.name :  'Sobre quem você quer saber?' " type="button"
+               class="fs-5 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center text-bg-light p-3 mt-3"
+                data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 753px; height: 50px;">
+              
             </button>
             
-                <ul x-show="Isopen" class="dropdown-menu" style="width: 750px;">
+                <ul class="dropdown-menu" style="width: 750px;">
                   
                   <template x-for="character in characters" >
-                     <li><a href="#" x-text="character.name"></a></li>
+                     <li class="dropdown-item"><span x-text="character.name" class="p-4" @click="selecionarPersonagem(character)"></span></li>
                 </template>
           </ul>
               </div> 
