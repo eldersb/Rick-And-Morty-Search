@@ -42,15 +42,20 @@
               </div> 
 
               <!--Card do personagem-->
-              <div class="card mb-3 mt-3" style="max-width: 750px; max-height: 285px;">
-                <div class="row g-0" style="max-width: 740px; max-height: 284px;">
+              <div class="card mb-3 mt-3 bg-secondary" style="max-width: 750px; max-height: 288px;">
+                <div class="row" style="max-width: 740px; max-height: 284px;">
                   <div class="col-md-4">
                     <img x-bind:src="personagemSelect !== null ? personagemSelect.image : urlImagem" class="img-fluid rounded-start card-img-cover w-100" alt="..." style="height: 284px;" >
                   </div>
                   <div class="col-md-8" style="background-color: #3B3E44;">
                     <div class="card-body">
                       <h5 x-text=" personagemSelect ? personagemSelect.name : 'Nome do personagem'" class="card-title text-light"></h5>
-                      <p class="card-text text-light">Vivo ou Morto - Raça</p>
+                      <p class="card-text text-light">
+                        <span  x-text="personagemSelect ? personagemSelect.status : 'Vivo ou morto'"></span>
+                        <span>-</span>
+                        <span  x-text="personagemSelect ? personagemSelect.species : 'Raça'"></span>
+                      </p>
+              
                       <h5 class="card-title text-light">Last Know Location</h5>
                       <p x-text="personagemSelect ? personagemSelect.location.name : 'Location' " class="card-text text-light"><small class="text-body-secondary tex"></small></p>
                       <h5 class="card-title text-light">Firt seen in:</h5>
@@ -63,7 +68,7 @@
               <!--Dropdown epsódios-->
 
               <div class="btn-group d-flex justify-content-md-center align-items-center">
-                <button type="button" class=" fs-4 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center p-3 mt-3" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 753px; height: 50px;">
+                <button  type="button" class=" fs-4 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center p-3 mt-3" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 753px; height: 50px;">
                   Ver epsódios
                 </button>
                 <ul class="dropdown-menu" style="width: 750px;">

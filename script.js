@@ -5,6 +5,7 @@ const app = () => {
     return {
         characters: [],
         personagemSelect: null,
+        epsodioSelecionado: [],
         urlImagem: "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
     init(){
         axios.get('https://rickandmortyapi.com/api/character')
@@ -21,9 +22,10 @@ const app = () => {
      selecionarPersonagem(personagem){
         this.personagemSelect = personagem;
         console.log(this.personagemSelect);
+    }, 
+    testePersoangem(){
+        
     }
-
-
 
     }
     
