@@ -20,13 +20,13 @@
 </style>
 
 <body>
-    <div class="container">
+    <div class="container"  x-data="app()">
         <div class="row d-flex justify-content-md-center mt-5">
 
           <!--Dropdown personagem-->
             <h1 class="fs-1 text-center text-light">Rick And Morty Morty-Search</h1>
           
-             <div x-data="app()" class="btn-group d-flex justify-content-md-center align-items-center">
+             <div class="btn-group d-flex justify-content-md-center align-items-center">
               <button x-text="personagemSelect !== null ? personagemSelect.name :  'Sobre quem você quer saber?' " type="button"
                class="fs-5 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center text-bg-light p-3 mt-3"
                 data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 753px; height: 50px;">
@@ -36,25 +36,25 @@
                 <ul class="dropdown-menu" style="width: 750px;">
                   
                   <template x-for="character in characters" >
-                     <li class="dropdown-item"><span x-text="character.name" class="p-4" @click="selecionarPersonagem(character)"></span></li>
+                     <li class="dropdown-item" @click="selecionarPersonagem(character)" ><span x-text="character.name" class="p-4" ></span></li>
                 </template>
           </ul>
               </div> 
 
               <!--Card do personagem-->
-              <div class="card mb-3 mt-3" style="max-width: 750px; max-height: 284px;">
-                <div class="row g-0" style="max-width: 750px; max-height: 284px;">
+              <div class="card mb-3 mt-3" style="max-width: 750px; max-height: 285px;">
+                <div class="row g-0" style="max-width: 740px; max-height: 284px;">
                   <div class="col-md-4">
-                    <img src="" class="img-fluid rounded-start card-img-cover w-100" alt="..." style="height: 284px;" >
+                    <img x-bind:src="personagemSelect !== null ? personagemSelect.image : urlImagem" class="img-fluid rounded-start card-img-cover w-100" alt="..." style="height: 284px;" >
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-md-8" style="background-color: #3B3E44;">
                     <div class="card-body">
-                      <h2 class="card-title">Nome</h2>
-                      <p class="card-text">Vivo ou Morto - Raça</p>
-                      <h5 class="card-title">Last Know Location</h5>
-                      <p class="card-text"><small class="text-body-secondary">Localidade</small></p>
-                      <h5 class="card-title">Firt seen in:</h5>
-                      <p class="card-text">Lugar visto a primeira vez</p>
+                      <h5 x-text=" personagemSelect ? personagemSelect.name : 'Nome do personagem'" class="card-title text-light"></h5>
+                      <p class="card-text text-light">Vivo ou Morto - Raça</p>
+                      <h5 class="card-title text-light">Last Know Location</h5>
+                      <p x-text="personagemSelect ? personagemSelect.location.name : 'Location' " class="card-text text-light"><small class="text-body-secondary tex"></small></p>
+                      <h5 class="card-title text-light">Firt seen in:</h5>
+                      <p x-text="personagemSelect ? personagemSelect.origin.name : 'Lugar visto a primeira vez'" class="card-text text-light"></p>
                     </div>
                   </div>
                 </div>

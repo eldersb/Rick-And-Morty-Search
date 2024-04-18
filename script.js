@@ -5,6 +5,7 @@ const app = () => {
     return {
         characters: [],
         personagemSelect: null,
+        urlImagem: "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
     init(){
         axios.get('https://rickandmortyapi.com/api/character')
         .then((response) => {
