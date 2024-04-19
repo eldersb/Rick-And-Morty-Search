@@ -37,6 +37,11 @@
   .null-dot {
     background-color: white;
   }
+
+  .dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+  }
 </style>
 
 <body>
@@ -48,7 +53,7 @@
           
              <div class="btn-group d-flex justify-content-md-center align-items-center">
               <button x-text="personagemSelect !== null ? personagemSelect.name :  'Sobre quem você quer saber?' " type="button"
-               class="fs-5 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center text-bg-light p-3 mt-3"
+               class="fs-6 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center text-bg-light p-3 mt-3"
                 data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 753px; height: 50px;" >
               
             </button>
@@ -78,9 +83,9 @@
                         <span  x-text="personagemSelect ? personagemSelect.species : 'Raça'"></span>
                       </p>
               
-                      <h5 class="card-title text-light">Last Know Location</h5>
+                      <h5 class="card-title text-light fs-6">Last Know Location</h5>
                       <p x-text="personagemSelect ? personagemSelect.location.name : 'Location' " class="card-text text-light"><small class="text-body-secondary tex"></small></p>
-                      <h5 class="card-title text-light">Firt seen in:</h5>
+                      <h5 class="card-title text-light fs-6">Firt seen in:</h5>
                       <p x-text="personagemSelect ? personagemSelect.origin.name : 'Lugar visto a primeira vez'" class="card-text text-light"></p>
                     </div>
                   </div>
@@ -90,15 +95,13 @@
               <!--Dropdown epsódios-->
 
               <div class="btn-group d-flex justify-content-md-center align-items-center">
-                <button  type="button" class=" fs-4 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center p-3 mt-3" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 753px; height: 50px;">
+                <button  type="button" class=" fs-6 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center p-3 mt-3" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 753px; height: 50px;">
                   Ver epsódios
                 </button>
                 <ul class="dropdown-menu" style="width: 750px;">
                   <template x-for="episodio in episodioSelecionado">
                     <li class="dropdown-item"><span x-text="episodio"></span></li>
                   </template>
-                 
-                 
                 
                 </ul>
               </div>
@@ -106,7 +109,7 @@
               <!--Dropdown vizinhos-->
 
               <div class="btn-group d-flex justify-content-md-center align-items-center">
-                <button type="button" class="fs-4 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center p-3 mt-3" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 753px; height: 50px;">
+                <button type="button" class="fs-6 btn btn-secondary dropdown-toggle d-flex justify-content-between align-items-center p-3 mt-3" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 753px; height: 50px;">
                   Conhecer os vizinhos
                 </button>
                 <ul class="dropdown-menu" style="width: 750px;">
