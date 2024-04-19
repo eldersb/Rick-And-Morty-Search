@@ -32,7 +32,10 @@
     background-color: red; 
   }
   .unknown-dot{
-    background-color: rgb(255, 251, 0);
+    background-color: rgb(255, 238, 0);
+  }
+  .null-dot {
+    background-color: white;
   }
 </style>
 
@@ -68,8 +71,8 @@
                     <div class="card-body">
                       <h5 x-text=" personagemSelect ? personagemSelect.name : 'Nome do personagem'" class="card-title text-light"></h5>
                       <p class="card-text text-light">
-                        <span class="status-dot" x-bind:class="{ 'alive-dot': personagemSelect.status === 'Alive', 'dead-dot': personagemSelect.status === 'Dead', 
-                          'unknown-dot': personagemSelect.status === 'unknown' }"></span>
+                        <span class="status-dot" x-bind:class="{ 'alive-dot': personagemSelect?.status === 'Alive', 'dead-dot': personagemSelect?.status === 'Dead', 
+                          'unknown-dot': personagemSelect?.status === 'unknown', 'null-dot': personagemSelect === null  }"></span>
                         <span  x-text="personagemSelect ? personagemSelect.status : 'Vivo ou morto'"></span>
                         <span>-</span>
                         <span  x-text="personagemSelect ? personagemSelect.species : 'Raça'"></span>
@@ -91,11 +94,12 @@
                   Ver epsódios
                 </button>
                 <ul class="dropdown-menu" style="width: 750px;">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                  <template x-for="episodio in episodioSelecionado">
+                    <li class="dropdown-item"><span x-text="episodio"></span></li>
+                  </template>
+                 
+                 
+                
                 </ul>
               </div>
 
