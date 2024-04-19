@@ -5,16 +5,25 @@ const app = () => {
         episodioSelecionado: [],
         vizinhoSelecionado: [],
         urlImagem: "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
-    init(){
-        axios.get('https://rickandmortyapi.com/api/character')
-        .then((response) => {
-            this.characters = response.data.results;
-            console.log(this.characters)
-            
-        })
-         .catch((error) =>{
-             console.log(error);
-         })
+     async init(){
+
+        try {
+            let page = 1;
+            let allCharacters = [];
+
+            while(page !== null) {
+                const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${page}`);
+                const charactersPage = response.data.results;
+                allCharacters = [...allCharacters, ...charactersPage];
+
+                page = response.data.info.next ? new URL(response.data.info.next).searchParams.get('page') : null;
+            }
+
+            this.characters = allCharacters;
+            console.log(this.characters);
+        } catch(error){
+            console.log(error);
+        }
     },
      selecionarPersonagem(personagem){
         this.personagemSelect = personagem;
@@ -56,9 +65,6 @@ const app = () => {
 
 }
 
-   
-
-    
 
 }
 
