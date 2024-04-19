@@ -110,11 +110,9 @@
                   Conhecer os vizinhos
                 </button>
                 <ul class="dropdown-menu" style="width: 750px;">
-                  <li><a class="dropdown-item" href="#" >Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                  <template x-for="vizinho in vizinhoSelecionado">
+                    <li class="dropdown-item"><span x-text="vizinho"></span></li>
+                  </template>
                 </ul>
               </div>
 
