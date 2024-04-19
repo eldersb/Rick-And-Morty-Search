@@ -19,6 +19,8 @@ const app = () => {
                 page = response.data.info.next ? new URL(response.data.info.next).searchParams.get('page') : null;
             }
 
+            allCharacters.sort((a, b) => a.name.localeCompare(b.name));
+
             this.characters = allCharacters;
             console.log(this.characters);
         } catch(error){

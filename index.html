@@ -45,11 +45,11 @@
 </style>
 
 <body>
-    <div class="container"  x-data="app()">
-        <div class="row d-flex justify-content-md-center mt-5">
+    <div class="container"  >
+        <div class="row d-flex justify-content-md-center mt-5" x-data="app()">
 
           <!--Dropdown personagem-->
-            <h1 class="fs-1 text-center text-light">Rick And Morty Morty-Search</h1>
+            <h1 class="fs-1 text-center text-light">Rick And Morty Morty Search</h1>
           
              <div class="btn-group d-flex justify-content-md-center align-items-center">
               <button x-text="personagemSelect !== null ? personagemSelect.name :  'Sobre quem você quer saber?' " type="button"
@@ -85,7 +85,7 @@
               
                       <h5 class="card-title text-light fs-6">Last Know Location</h5>
                       <p x-text="personagemSelect ? personagemSelect.location.name : 'Location' " class="card-text text-light"><small class="text-body-secondary tex"></small></p>
-                      <h5 class="card-title text-light fs-6">Firt seen in:</h5>
+                      <h5 class="card-title text-light">Firt seen in:</h5>
                       <p x-text="personagemSelect ? personagemSelect.origin.name : 'Lugar visto a primeira vez'" class="card-text text-light"></p>
                     </div>
                   </div>
