@@ -11,6 +11,6 @@
 * https://eldersb.github.io/Rick-And-Morty-Search/
 
 # Imagem do projeto
-![Img-projeto](https://github.com/eldersb/Rick-And-Morty-Search/assets/122701368/fb0da29c-67f2-402d-82c6-ae4776c1b40d)
+![Img-projeto](https://github.com/eldersb/Rick-And-Morty-Search/assets/122701368/764c684a-1667-45aa-9c49-2abcf73798d2)
 
 
