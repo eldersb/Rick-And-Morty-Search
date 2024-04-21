@@ -1,5 +1,5 @@
 # Rick-And-Morty-Search
- Projeto de busca de personagens de Rick and Morty, que permite fazer requisições a API, buscando informações dos personagens.
+Atividade da disciplina de Desenvolvimento Web 1 proposta pelo professor Paulo Reis, cujo projeto permite fazer buscas de personagens de Rick and Morty, fazendo requisições a API, encontrando informações dos personagens.
 
 # Tecnologias Utilizadas
  * HTML, CSS
