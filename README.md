@@ -7,8 +7,9 @@ Atividade da disciplina de Desenvolvimento Web 1 proposta pelo professor Paulo R
  * JavaScript + Alpine.js
  * Axios 
  
-# Github Pages
+# Github Pages e Vercel
 * https://eldersb.github.io/Rick-And-Morty-Search/
+* https://rick-and-morty-search-ruby.vercel.app/
 
 # Imagem do projeto
 ![Img-projeto](https://github.com/eldersb/Rick-And-Morty-Search/assets/122701368/764c684a-1667-45aa-9c49-2abcf73798d2)
